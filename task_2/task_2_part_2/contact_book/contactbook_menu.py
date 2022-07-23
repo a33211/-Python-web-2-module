@@ -12,44 +12,24 @@ class WebInterface(ABC):
     def __int__(self):
         self.data = None
 
+
+class AbstractView(ABC):
     @abstractmethod
-    def add_command(self):
+    def showRecords(self):
         pass
 
     @abstractmethod
-    def show_all_command(self):
-        pass
-
-    @abstractmethod
-    def days_to_birthday(self):
-        pass
-
-    @abstractmethod
-    def find_phone_command(self):
-        pass
-
-    @abstractmethod
-    def change_phone_command(self):
+    def showSingleRecord(self, key):
         pass
 
 
-    @abstractmethod
-    def back_command(self):
+
+class ContactBookView(AbstractView):
+
+    def showRecords(self):
         pass
-
-    @abstractmethod
-    def change_birthday_command(self):
+    def showSingleRecord(self, key):
         pass
-
-
-    @abstractmethod
-    def change_name_command(self):
-        pass
-
-    @abstractmethod
-     def change_email_command(self):
-         pass
-
 
 class Session:
     def __init__(self, file, book: ContactBook):
